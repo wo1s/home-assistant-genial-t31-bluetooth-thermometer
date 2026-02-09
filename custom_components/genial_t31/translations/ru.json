@@ -1,0 +1,50 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Настройка термометра Genial T31",
+        "description": "Выберите обнаруженное устройство или введите MAC-адрес вручную.",
+        "data": {
+          "mac_address": "MAC-адрес",
+          "name": "Имя устройства",
+          "manual_entry": "Ввести вручную"
+        }
+      },
+      "confirm": {
+        "title": "Подтверждение обнаружения",
+        "description": "Хотите настроить {name} ({mac})?"
+      }
+    },
+    "error": {
+      "invalid_mac": "Неверный формат MAC-адреса"
+    },
+    "abort": {
+      "already_configured": "Устройство уже настроено",
+      "not_supported": "Устройство не поддерживается"
+    },
+    "create_entry": {
+      "default": "Термометр Genial T31 настроен"
+    },
+    "default_device_name": "Genial T31 Термометр"
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Параметры",
+        "data": {
+          "name": "Имя устройства"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": {
+        "name": "Температура тела"
+      },
+      "battery": {
+        "name": "Заряд батареи"
+      }
+    }
+  }
+}

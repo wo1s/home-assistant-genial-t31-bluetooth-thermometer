@@ -8,7 +8,7 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.typing import ConfigType
 
-from .const import DOMAIN
+from .const import DOMAIN, DEFAULT_DEVICE_NAME
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     client = GenialT31Client(
         hass=hass,  # Добавлено для работы с Bluetooth proxy
         mac_address=entry.data["mac_address"],
-        name=entry.data.get("name", "Genial T31 Thermometer")
+        name=entry.data.get("name", DEFAULT_DEVICE_NAME)
     )
     
     # Create coordinator

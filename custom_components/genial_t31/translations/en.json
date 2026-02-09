@@ -3,9 +3,11 @@
     "step": {
       "user": {
         "title": "Set up Genial T31 Thermometer",
+        "description": "Select a discovered device or enter the MAC address manually.",
         "data": {
           "mac_address": "MAC Address",
-          "name": "Device Name"
+          "name": "Device Name",
+          "manual_entry": "Enter manually"
         }
       },
       "confirm": {
@@ -19,6 +21,30 @@
     "abort": {
       "already_configured": "Device is already configured",
       "not_supported": "Device not supported"
+    },
+    "create_entry": {
+      "default": "Genial T31 Thermometer has been set up"
+    },
+    "default_device_name": "Genial T31 Thermometer"
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "name": "Device Name"
+        }
+      }
     }
-  }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": {
+        "name": "Body temperature"
+      },
+      "battery": {
+        "name": "Battery level"
+      }
+    }
+  },
 }
