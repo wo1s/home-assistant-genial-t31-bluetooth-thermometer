@@ -1,7 +1,7 @@
 {
   "domain": "genial_t31",
   "name": "Genial T31 Thermometer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "requirements": ["bleak>=0.21.0", "bleak-retry-connector>=2.13.0"],
   "dependencies": ["bluetooth"],
   "codeowners": ["@wo1s"],
@@ -15,3 +15,4 @@
     }
   ]
 }
+
