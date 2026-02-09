@@ -10,21 +10,19 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.entity import DeviceInfo
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import DOMAIN
+from .const import DOMAIN, DEFAULT_DEVICE_NAME
 from .coordinator import GenialT31Coordinator
 
 _LOGGER = logging.getLogger(__name__)
 
 SENSOR_TYPES = {
     "temperature": {
-        "name": "Температура тела",
         "unit": "°C",
         "icon": "mdi:thermometer",
         "device_class": "temperature",
         "state_class": "measurement",
     },
     "battery": {
-        "name": "Заряд батареи",
         "unit": "%",
         "icon": "mdi:battery",
         "device_class": "battery",
@@ -63,7 +61,8 @@ class GenialT31Sensor(CoordinatorEntity, SensorEntity):
         self._entry = entry
         self._config = SENSOR_TYPES[sensor_type]
         
-        self._attr_name = f"{entry.data.get('name', 'Genial T31')} {self._config['name']}"
+        self._attr_has_entity_name = True
+        self._attr_translation_key = sensor_type
         self._attr_unique_id = f"{entry.unique_id}_{sensor_type}"
         self._attr_device_class = self._config.get("device_class")
         self._attr_native_unit_of_measurement = self._config["unit"]
@@ -72,7 +71,7 @@ class GenialT31Sensor(CoordinatorEntity, SensorEntity):
         
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry.unique_id)},
-            name=entry.data.get("name", "Genial T31 Thermometer"),
+            name=entry.data.get("name", DEFAULT_DEVICE_NAME),
             manufacturer="Genial",
             model="T31",
             sw_version="1.0",

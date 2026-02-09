@@ -6,6 +6,8 @@ DOMAIN = "genial_t31"
 LOGGER = logging.getLogger(__name__)
 
 CONF_MAC_ADDRESS = "mac_address"
+DEFAULT_DEVICE_NAME = "Genial T31 Thermometer"
+
 CONF_NAME = "name"
 
 # Таймауты
