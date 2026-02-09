@@ -1,0 +1,17 @@
+{
+  "domain": "genial_t31",
+  "name": "Genial T31 Thermometer",
+  "version": "1.0.0",
+  "requirements": ["bleak>=0.21.0", "bleak-retry-connector>=2.13.0"],
+  "dependencies": ["bluetooth"],
+  "codeowners": ["@wo1s"],
+  "config_flow": true,
+  "iot_class": "local_push",
+  "bluetooth": [
+    {
+      "local_name": "Genial-T31*",
+      "service_uuid": "00001809-0000-1000-8000-00805f9b34fb",
+      "connectable": true
+    }
+  ]
+}
